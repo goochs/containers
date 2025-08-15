@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1
 
-FROM node:20-alpine AS builder
+FROM node:22-alpine AS builder
 ARG VERSION
 RUN apk add zip
 WORKDIR /app
