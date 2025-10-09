@@ -133,6 +133,17 @@ This repository does not support multiple "channels" for the same application. F
 
 This approach ensures consistency and focuses on streamlined builds.
 
+## Contributing
+
+We encourage the use of official upstream container images whenever possible. However, contributing to this repository might make sense if:
+
+- The upstream application is **actively maintained**.
+- **And** one of the following applies:
+  - no official image exists.
+  - the official image does not support **multi-architecture builds**.
+  - the official image uses tools like **s6-overlay**, **gosu**, or other unconventional initialization mechanisms.
+  - does not tag releases.
+
 ## Deprecations
 
 Containers in this repository may be deprecated for the following reasons:
