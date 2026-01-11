@@ -6,7 +6,7 @@ variable "APP" {
 
 variable "VERSION" {
   // renovate: datasource=github-releases depName=mainsail-crew/mainsail
-  default = "v2.16.1"
+  default = "v2.17.0"
 }
 
 variable "SOURCE" {
