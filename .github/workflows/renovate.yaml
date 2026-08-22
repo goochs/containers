@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Generate Token
-        uses: actions/create-github-app-token@fee1f7d63c2ff003460e3d139729b119787bc349 # v2.2.2
+        uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3.2.0
         id: app-token
         with:
           app-id: ${{ secrets.BOT_APP_ID }}
@@ -25,7 +25,7 @@ jobs:
           owner: ${{ github.repository_owner }}
 
       - name: Run Renovate
-        uses: codex-/return-dispatch@16fa9d14771c4d56ae0196bbda1d3c17f7f3650f # v3.0.2
+        uses: codex-/return-dispatch@85e564d60eaec3cc4aca885373d510cfe4bd5b19 # v4.0.1
         id: dispatch
         with:
           token: ${{ steps.app-token.outputs.token }}
@@ -37,7 +37,7 @@ jobs:
             { "autodiscoverFilter": "${{ github.event.repository.name }}" }
 
       - name: Await Renovate Completion
-        uses: Codex-/await-remote-run@a56c556e6434d2d7ec9438dc656143b39532324e # v1.13.0
+        uses: Codex-/await-remote-run@bb04140a0965ec5532845d826a74dc5f075f891b # v3.0.0
         with:
           token: ${{ steps.app-token.outputs.token }}
           owner: ${{ github.repository_owner }}
